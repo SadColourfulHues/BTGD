@@ -35,7 +35,7 @@ func _notification(what: int) -> void:
 #region Functions
 
 ## Updates the evaluator's action set
-func set_actions(actions: Array[BaseEvaluatorAction]) -> void:
+func set_actions(actions: Array) -> void:
     p_actions = actions
 
     # Re-generate access index #
