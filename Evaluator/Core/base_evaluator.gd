@@ -12,7 +12,7 @@ var p_flags: Array[StringName]
 
 ## An array containing all possible actions in the evaluator.
 ## (Do not set directly, use the [set_actions] method to properly update the evaluator.)
-var p_actions: Array[BaseEvaluatorAction]
+var p_actions: Array
 
 ## A pre-allocated array that is used to store index access sequence during an evaluation
 ## (Do not use for anything else or regenerate its contents. Call 'shuffle' to randomise
