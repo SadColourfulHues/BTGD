@@ -7,6 +7,9 @@ extends Object
 ## Shared pseudorandom generator for chance-based calculations
 static var p_rng := RandomNumberGenerator.new()
 
+## When set to true, action callbacks are automatically called when picked
+var m_auto_callback: bool = true
+
 ## An array containing all currently-set flags in the evaluator
 var p_flags: Array[StringName]
 
@@ -65,6 +68,13 @@ func unflag(flag_id: StringName) -> void:
 #endregion
 
 #region Utils
+
+func __trigger_callback(callback: Callable) -> void:
+    if !m_auto_callback || !callback.is_valid():
+        return
+
+    callback.call()
+
 
 ## Returns true for successful rolls
 ## (Expected range 0.0 - 1.0)

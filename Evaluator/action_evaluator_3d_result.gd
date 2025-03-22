@@ -10,3 +10,6 @@ var m_lock_duration: float
 var m_rm_scale: float
 ## The amount of time wanted by the action to turn the object to its target (game-specific)
 var m_turn_secs: float
+
+## Callback associated with this action
+var p_callback: Callable

@@ -15,8 +15,6 @@ func _init(flag: StringName, unflag_mode: bool = false) -> void:
 #region Events
 
 func _on_behaviour_process(context: Dictionary[StringName, Variant]) -> BehaviourNode.Result:
-    if context.has(m_flag) && context[m_flag] == m_check_target:
-        return BehaviourNode.Result.SUCCESS
-    return BehaviourNode.Result.FAIL
+    return BTUtils.b2r(context.has(m_flag) && context[m_flag] == m_check_target)
 
 #endregion

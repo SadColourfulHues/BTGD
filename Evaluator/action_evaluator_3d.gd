@@ -20,7 +20,7 @@ func evaluate(distance: float,
         if !action.evaluate(p_flags, distance, dot, scale_modifier):
             continue
 
-        action.trigger_callback()
+        __trigger_callback(action.p_callback)
         return action.as_result(left_side)
 
     return null

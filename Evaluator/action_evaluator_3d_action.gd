@@ -31,7 +31,7 @@ func _init(action_id: StringName,
     m_rm_scale = rm_scale
 
     m_min_distance = 0.0
-    m_max_distance = max_distance
+    m_max_distance = max_distance * max_distance
 
     m_lock_duration = lock_duration
 
@@ -78,6 +78,7 @@ func as_result(left_side: bool) -> ActionEvaluator3DResult:
     result.m_lock_duration = m_lock_duration
     result.m_rm_scale = m_rm_scale
     result.m_turn_secs = m_turn_to_target_secs
+    result.p_callback = p_callback
 
     return result
 
@@ -94,7 +95,18 @@ func other_side_id(alt_id: StringName) -> EvaluatorAction3D:
 
 ## Adds a minimum distance requirement to this action
 func min_distance(distance: float) -> EvaluatorAction3D:
-    m_min_distance = distance
+    m_min_distance = distance * distance
+    return self
+
+
+## Adds a maximum distance requirement to this action
+func max_distance(distance: float) -> EvaluatorAction3D:
+    m_max_distance = distance * distance
+    return self
+
+## Adds a root motion scale modifier to this action
+func rm_scale(scale: float) -> EvaluatorAction3D:
+    m_rm_scale = scale
     return self
 
 
