@@ -1,3 +1,5 @@
+@warning_ignore_start("shadowed_variable")
+
 ## An object representing an action for a [ActionEvaluator3D]
 ## (Best used with SCHLibGD's [Animator])
 class_name EvaluatorAction3D
