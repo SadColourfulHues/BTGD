@@ -7,9 +7,9 @@ var m_flag: StringName
 var m_check_target: bool
 
 
-func _init(flag: StringName, unflag_mode: bool = false) -> void:
+func _init(flag: StringName, unflag_mode: bool = true) -> void:
     m_flag = flag
-    m_check_target = !unflag_mode
+    m_check_target = unflag_mode
 
 
 #region Events
