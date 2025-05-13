@@ -6,20 +6,20 @@ extends Object
 
 ## Returns success if condition is true
 static func b2r(condition: bool,
-           fail_output := BehaviourNode.Result.FAIL) -> BehaviourNode.Result:
+           fail_output := BTNode.FAIL) -> BTNode.Result:
 
-    return BehaviourNode.Result.SUCCESS if condition else fail_output
+    return BTNode.SUCCESS if condition else fail_output
 
 
 ## Inverts the value of [base]
-static func invert(base: BehaviourNode.Result) -> BehaviourNode.Result:
+static func invert(base: BTNode.Result) -> BTNode.Result:
     match base:
-        BehaviourNode.Result.SUCCESS:
-            return BehaviourNode.Result.FAIL
-        BehaviourNode.Result.FAIL:
-            return BehaviourNode.Result.SUCCESS
-        BehaviourNode.Result.RUNNING:
-            return BehaviourNode.Result.RUNNING
+        BTNode.SUCCESS:
+            return BTNode.FAIL
+        BTNode.FAIL:
+            return BTNode.SUCCESS
+        BTNode.RUNNING:
+            return BTNode.RUNNING
         _:
             return base
 

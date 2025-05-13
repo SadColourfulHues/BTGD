@@ -4,12 +4,12 @@ class_name SelectorNode
 extends CompositeNode
 
 
-func _on_behaviour_process(context: Dictionary[StringName, Variant]) -> BehaviourNode.Result:
-    for child: BehaviourNode in p_children:
+func _on_behaviour_process(context: Dictionary[StringName, Variant]) -> BTNode.Result:
+    for child: BTNode in p_children:
         var result := child._on_behaviour_process(context)
 
-        if (result == BehaviourNode.Result.RUNNING ||
-            result == BehaviourNode.Result.SUCCESS):
+        if (result == BTNode.RUNNING ||
+            result == BTNode.SUCCESS):
             return result
 
-    return BehaviourNode.Result.FAIL
+    return BTNode.FAIL

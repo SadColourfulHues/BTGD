@@ -1,6 +1,9 @@
+## (BehaviourTreeNode)
 ## The base BT node class, subclass to implement custom behaviour
-class_name BehaviourNode
+class_name BTNode
 extends Object
+
+##region Result
 
 enum Result
 {
@@ -8,6 +11,14 @@ enum Result
     FAIL,
     RUNNING
 }
+
+# Shorthands #
+
+const SUCCESS := Result.SUCCESS
+const FAIL := Result.FAIL
+const RUNNING := Result.RUNNING
+
+#endregion
 
 #region Events
 
@@ -20,7 +31,7 @@ func _on_behaviour_deinit() -> void:
 ## The behaviour node's processing function
 @warning_ignore("UNUSED_PARAMETER")
 func _on_behaviour_process(context: Dictionary[StringName, Variant]) -> Result:
-    return Result.SUCCESS
+    return SUCCESS
 
 #endregion
 

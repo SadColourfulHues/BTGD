@@ -1,11 +1,11 @@
 ## The base-class for nodes that modify the behaviour of other nodes
 class_name DecoratorNode
-extends BehaviourNode
+extends BTNode
 
-var p_wrapped: BehaviourNode
+var p_wrapped: BTNode
 
 
-func _init(target: BehaviourNode) -> void:
+func _init(target: BTNode) -> void:
     p_wrapped = target
 
 

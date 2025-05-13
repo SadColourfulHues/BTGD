@@ -5,13 +5,13 @@ extends RefCounted
 ## When used in a context dictionary, it returns a pointer to owner of the behaviour tree
 const BTK_TREE_OWNER := &"t_owner"
 
-var p_root: BehaviourNode
+var p_root: BTNode
 var p_context: Dictionary[StringName, Variant]
 
 var m_sleep_ticks := 0.0
 
 
-func _init(owner: Node, root: BehaviourNode) -> void:
+func _init(owner: Node, root: BTNode) -> void:
     p_root = root
     p_context = { BTK_TREE_OWNER = owner }
 

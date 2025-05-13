@@ -3,7 +3,7 @@
 ## provide a parameter for the context dict. Its primary purpose is to
 ## provide a way to quickly trigger methods during certain behaviour branches.
 class_name CallbackNode
-extends BehaviourNode
+extends BTNode
 
 var p_callback: Callable
 
@@ -13,8 +13,8 @@ func _init(callback: Callable) -> void:
 
 #region Events
 
-func _on_behaviour_process(_context: Dictionary[StringName, Variant]) -> BehaviourNode.Result:
+func _on_behaviour_process(_context: Dictionary[StringName, Variant]) -> BTNode.Result:
     p_callback.call()
-    return BehaviourNode.Result.SUCCESS
+    return BTNode.SUCCESS
 
 #endregion
