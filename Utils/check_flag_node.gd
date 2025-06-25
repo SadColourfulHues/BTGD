@@ -14,7 +14,7 @@ func _init(flag: StringName, check_target: bool = true) -> void:
 #region Events
 
 func _on_behaviour_process(context: Dictionary[StringName, Variant]) -> BTNode.Result:
-    if context.has(m_flag) && context[m_flag] == m_check_target:
+    if (m_check_target == context.get(m_flag, false)):
         return BTNode.SUCCESS
 
     return BTNode.FAIL

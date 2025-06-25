@@ -19,6 +19,6 @@ func _on_behaviour_process(context: Dictionary[StringName, Variant]) -> BTNode.R
     if m_flag_mode:
         context[m_key] = true
     else:
-        context.erase(m_key)
+        context[m_key] = false
 
     return BTNode.SUCCESS
