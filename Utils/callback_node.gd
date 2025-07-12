@@ -8,6 +8,7 @@ extends BTNode
 var p_callback: Callable
 
 func _init(callback: Callable) -> void:
+    assert(callback.is_valid(), "CallbackNode: invalid function assigned")
     p_callback = callback
 
 

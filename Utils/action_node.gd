@@ -12,6 +12,7 @@ var p_callback: Callable
 
 
 func _init(callback: Callable) -> void:
+    assert(callback.is_valid(), "ActionNode: invalid function assigned")
     p_callback = callback
 
 
